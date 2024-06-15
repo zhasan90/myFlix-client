@@ -27387,88 +27387,39 @@ var _movieView = require("../../../movie-view/movie-view");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
-    const [movies, setMovies] = (0, _react.useState)([
-        {
-            id: 1,
-            title: "Interstellar.",
-            description: "Exploring space and time.",
-            genre: {
-                name: "Sci-fi.",
-                description: "Science Fiction."
-            },
-            director: {
-                name: "Christopher Nolan.",
-                dob: "July 30, 1970."
-            },
-            cast: [
-                "Matthew McConaughey, ",
-                "Jessica Chastain, ",
-                "Anne Hathaway, ",
-                "Matt Daemon, "
-            ],
-            image: "https://m.media-amazon.com/images/I/91LMgexOIKL._AC_UL320_.jpg"
-        },
-        {
-            id: 2,
-            title: "Pulp Fiction.",
-            description: "A crime anthology.",
-            genre: {
-                name: "Crime.",
-                description: "Involves criminal activities and investigations."
-            },
-            director: {
-                name: "Quentin Tarantino.",
-                dob: "March 27, 1963."
-            },
-            cast: [
-                "John Travolta, ",
-                "Samuel L. Jackson, ",
-                "Bruce Willis"
-            ],
-            image: "https://m.media-amazon.com/images/I/81FlT3v6emL._AC_UL320_.jpg"
-        },
-        {
-            id: 3,
-            title: "Forrest Gump.",
-            description: "Drama-comedy about a simple man.",
-            genre: {
-                name: [
-                    "Drama, ",
-                    "Comedy"
-                ],
-                description: [
-                    "Emotional Damage, ",
-                    "Makes people laugh"
-                ]
-            },
-            director: {
-                name: "Robert Zemeckis",
-                dob: "May 14, 1951"
-            },
-            cast: [
-                "Tom Hanks, ",
-                "Robin Wright, ",
-                "Gary Sinise"
-            ],
-            image: "https://m.media-amazon.com/images/I/41C+R-7PdtL._AC_UL320_.jpg"
-        }
-    ]);
+    const [movies, setMovies] = (0, _react.useState)([]);
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
+    (0, _react.useEffect)(()=>{
+        fetch("https://movieapi2-pxralhd31-zhasan1s-projects.vercel.app/movies").then((response)=>response.json()).then((data)=>{
+            const moviesFromApi = data.docs.map((doc)=>{
+                return {
+                    id: doc._id,
+                    title: doc.Title,
+                    image: doc.ImagePath,
+                    actors: doc.Actors,
+                    genre: doc.Genre.Name,
+                    director: doc.Director.Name
+                };
+            });
+            setMovies(moviesFromApi);
+        });
+    }, []);
     if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
         movie: selectedMovie,
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 61,
+        lineNumber: 30,
         columnNumber: 17
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: " The list is empty "
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 66,
+        lineNumber: 35,
         columnNumber: 16
     }, undefined);
+    console.log(movies);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                 movie: movie,
@@ -27477,16 +27428,16 @@ const MainView = ()=>{
                 }
             }, movie.id, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 72,
+                lineNumber: 41,
                 columnNumber: 17
             }, undefined))
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 70,
+        lineNumber: 39,
         columnNumber: 9
     }, undefined);
 };
-_s(MainView, "sfHsbX6Z7KMNsvsGc0s2arNNl3A=");
+_s(MainView, "PO+XgOji7E32nFJj3H5UPLPJ7w4=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");

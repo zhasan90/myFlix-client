@@ -8,24 +8,24 @@ export const MainView = () => {
     const [selectedMovie, setSelectedMovie] = useState(null);
 
     useEffect(() => {
-        fetch("https://movieapi2-pxralhd31-zhasan1s-projects.vercel.app/movies")
+        fetch("https://movie-api-7rs7.onrender.com/movies")
             .then((response) => response.json())
             .then((data) => {
-                const moviesFromApi = data.docs.map((doc) => {
+                const moviesFromApi = data.map((doc) => {
                     return {
                         id: doc._id,
                         title: doc.Title,
                         image: doc.ImagePath,
                         actors: doc.Actors,
-                        genre: doc.Genre.Name,
-                        director: doc.Director.Name,
+                        genre: doc.Genre,
+                        director: doc.Director,
                     };
                 });
 
                 setMovies(moviesFromApi);
             });
     }, []);
-
+    console.log(movies);
     if (selectedMovie) {
         return (<MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
         );

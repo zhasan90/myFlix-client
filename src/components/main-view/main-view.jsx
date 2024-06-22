@@ -15,6 +15,7 @@ export const MainView = () => {
                     return {
                         id: doc._id,
                         title: doc.Title,
+                        description: doc.Description,
                         image: doc.ImagePath,
                         actors: doc.Actors,
                         genre: doc.Genre,
@@ -25,7 +26,6 @@ export const MainView = () => {
                 setMovies(moviesFromApi);
             });
     }, []);
-    console.log(movies);
     if (selectedMovie) {
         return (<MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
         );

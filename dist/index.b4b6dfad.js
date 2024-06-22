@@ -27395,6 +27395,7 @@ const MainView = ()=>{
                 return {
                     id: doc._id,
                     title: doc.Title,
+                    description: doc.Description,
                     image: doc.ImagePath,
                     actors: doc.Actors,
                     genre: doc.Genre,
@@ -27404,7 +27405,6 @@ const MainView = ()=>{
             setMovies(moviesFromApi);
         });
     }, []);
-    console.log(movies);
     if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
         movie: selectedMovie,
         onBackClick: ()=>setSelectedMovie(null)

@@ -32,6 +32,25 @@ export const MainView = () => {
             });
     }, []);
 
+    useEffect(() => {
+        fetch("https://movie-api-7rs7.onrender.com/movies")
+            .then((response) => response.json())
+            .then((data) => {
+                const moviesFromApi = data.map((doc) => {
+                    return {
+                        id: doc._id,
+                        title: doc.Title,
+                        description: doc.Description,
+                        image: doc.ImagePath,
+                        actors: doc.Actors,
+                        genre: doc.Genre,
+                        director: doc.Director,
+                    };
+                });
+
+                setMovies(moviesFromApi);
+            });
+    }, []);
     if (selectedMovie) {
         return (<MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
         );
@@ -40,7 +59,7 @@ export const MainView = () => {
     if (movies.length === 0) {
         return <div> The list is empty </div>
     }
-
+    console.log(movies)
     return (
         <div>
             {movies.map((movie) => (

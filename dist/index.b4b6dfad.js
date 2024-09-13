@@ -27259,7 +27259,7 @@ const MainView = ()=>{
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
     (0, _react.useEffect)(()=>{
         if (!token) return;
-        fetch("https://movie-api-7rs7.onrender.com/movies", {
+        fetch("https://movie-api-hlok.onrender.com/movies", {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`

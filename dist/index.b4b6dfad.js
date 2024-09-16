@@ -27868,18 +27868,19 @@ const MovieCard = ({ movie, onMovieClick })=>{
         lineNumber: 11,
         columnNumber: 11
     }, undefined);
-}; // MovieCard.propTypes = {
- //     movie: PropTypes.shape({
- //         title: PropTypes.string,
- //         image: PropTypes.string,
- //         description: PropTypes.string,
- //         actors: PropTypes.string,
- //         genre: PropTypes.string,
- //         director: PropTypes.string,
- //     }).isRequired,
- //     onMovieClick: PropTypes.func.isRequired
- // };
+};
 _c = MovieCard;
+MovieCard.propTypes = {
+    movie: (0, _propTypesDefault.default).shape({
+        title: (0, _propTypesDefault.default).string,
+        image: (0, _propTypesDefault.default).string,
+        description: (0, _propTypesDefault.default).string,
+        actors: (0, _propTypesDefault.default).array,
+        genre: (0, _propTypesDefault.default).object,
+        director: (0, _propTypesDefault.default).object
+    }).isRequired,
+    onMovieClick: (0, _propTypesDefault.default).func.isRequired
+};
 var _c;
 $RefreshReg$(_c, "MovieCard");
 

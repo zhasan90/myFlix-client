@@ -11,10 +11,10 @@ export const MovieCard = ({ movie, onMovieClick }) => {
           <Card onClick={() => onMovieClick(movie)}>
             <Card.Img variant="top" src={movie.image} />
             <Card.Body>
-              <Card.Title>{movie.title}</Card.Title>
-              <Card.Text>{movie.genre.Name}</Card.Text>
-              <Card.Text>{movie.director.Name}</Card.Text>
-              <Card.Text>{movie.actors}</Card.Text> 
+              <Card.Title>Title: {movie.title}</Card.Title>
+              <Card.Text>Genre: {movie.genre.Name}</Card.Text>
+              <Card.Text>Director: {movie.director.Name}</Card.Text>
+              <Card.Text>Actors: {movie.actors}</Card.Text> 
             </Card.Body>
           </Card>
         );

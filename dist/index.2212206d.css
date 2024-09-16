@@ -2,7 +2,7 @@
   color: #4682b4;
 }
 
-.back-button {
+.submit-button, .back-button, .logout-button {
   color: #f5f5f5;
   background-color: #1e90ff;
   border: none;

@@ -1,4 +1,5 @@
 import React , {useState} from "react";
+import "./login-view.scss";
 
 export const LoginView = ({onLoggedIn}) => {
     const [username, setUsername] = useState("")
@@ -48,7 +49,7 @@ export const LoginView = ({onLoggedIn}) => {
                  onChange={(e) => setPassword(e.target.value)}
                  required />
             </label>
-            <button type="submit">
+            <button className="submit-button" type="submit">
                 Submit
             </button>
         </form>

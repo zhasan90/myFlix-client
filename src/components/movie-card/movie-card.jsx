@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Button , Card } from "react-bootstrap";
+import { Button , Card, Container } from "react-bootstrap";
 
 export const MovieCard = ({ movie, onMovieClick }) => {
     // return (<div
@@ -8,7 +8,8 @@ export const MovieCard = ({ movie, onMovieClick }) => {
     //     }}> {movie.title}
     // </div>);
         return (
-          <Card onClick={() => onMovieClick(movie)}>
+          <Container>
+            <Card style={{ width: '18rem'}} onClick={() => onMovieClick(movie)}>
             <Card.Img variant="top" src={movie.image} />
             <Card.Body>
               <Card.Title>Title: {movie.title}</Card.Title>
@@ -16,7 +17,8 @@ export const MovieCard = ({ movie, onMovieClick }) => {
               <Card.Text>Director: {movie.director.Name}</Card.Text>
               <Card.Text>Actors: {movie.actors}</Card.Text> 
             </Card.Body>
-          </Card>
+            </Card>
+          </Container>
         );
 };
 

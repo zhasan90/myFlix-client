@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Button , Card, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export const MovieCard = ({ movie, onMovieClick }) => {
+export const MovieCard = ({ movie }) => {
     // return (<div
     //     onClick={() => {
     //         onMovieClick(movie);

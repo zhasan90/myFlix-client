@@ -27466,7 +27466,7 @@ var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
-const MovieCard = ({ movie, onMovieClick })=>{
+const MovieCard = ({ movie })=>{
     // return (<div
     //     onClick={() => {
     //         onMovieClick(movie);
@@ -38043,7 +38043,7 @@ var _movieViewScss = require("./movie-view.scss");
 var _s = $RefreshSig$();
 const MovieView = ({ movies, onBackClick })=>{
     _s();
-    const { MovieID } = useParam();
+    const { MovieID } = (0, _reactRouter.useParams)();
     const movie = movies.find((m)=>m.id === MovieID);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
@@ -38238,7 +38238,11 @@ const MovieView = ({ movies, onBackClick })=>{
         columnNumber: 9
     }, undefined);
 };
-_s(MovieView, "8zuq+QAnm6Dbxd8KoDfKV+iXA+Q=", true);
+_s(MovieView, "9NuEabzFM24Cni8N79O6IWO1FYU=", false, function() {
+    return [
+        (0, _reactRouter.useParams)
+    ];
+});
 _c = MovieView;
 var _c;
 $RefreshReg$(_c, "MovieView");

@@ -27426,7 +27426,7 @@ const MainView = ()=>{
                     lineNumber: 50,
                     columnNumber: 9
                 }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                user && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                     className: "logout-button",
                     button: true,
                     onClick: ()=>{
@@ -27437,7 +27437,7 @@ const MainView = ()=>{
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 118,
-                    columnNumber: 9
+                    columnNumber: 18
                 }, undefined)
             ]
         }, void 0, true, {

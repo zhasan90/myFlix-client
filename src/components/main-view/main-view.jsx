@@ -115,8 +115,7 @@ export const MainView = () => {
             }
           />
         </Routes>
-        <button className = "logout-button" button onClick={() => { setUser(null); localStorage.clear()}}>Logout</button>
-      </Row>
+        {user && <button className = "logout-button" button onClick={() => { setUser(null); localStorage.clear()}}>Logout</button>}</Row>
     </BrowserRouter>
   );
 };

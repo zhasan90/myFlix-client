@@ -5,7 +5,7 @@ import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom"; 
 
 
 export const MainView = () => {
@@ -115,7 +115,7 @@ export const MainView = () => {
             }
           />
         </Routes>
-        {user && <button className = "logout-button" button onClick={() => { setUser(null); localStorage.clear()}}>Logout</button>}</Row>
+        {user && <Link className = "logout-button" onClick={() => { setUser(null); localStorage.clear()}}>Logout</Link>}</Row>
     </BrowserRouter>
   );
 };

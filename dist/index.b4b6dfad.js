@@ -27426,9 +27426,8 @@ const MainView = ()=>{
                     lineNumber: 50,
                     columnNumber: 9
                 }, undefined),
-                user && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                user && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                     className: "logout-button",
-                    button: true,
                     onClick: ()=>{
                         setUser(null);
                         localStorage.clear();

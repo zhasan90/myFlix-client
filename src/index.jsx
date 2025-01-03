@@ -4,14 +4,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //Import statement to indicate that you need to bundle ./index.scss
 import "./index.scss";
 import { MainView } from "./components/main-view/main-view";
-import { LoginView } from "./components/login-view/login-view";
+import { Container } from "react-bootstrap";
+// import { LoginView } from "./components/login-view/login-view";
 
 //Main component (will eventually use all the others)
 const MyFlixApplication = () => {
     return (
-        <div className="my-Flix">
+        <Container>
             <MainView />
-        </div>
+        </Container>
+        // <div className="my-Flix">
+        //     <MainView />
+        // </div>
     );
 };
 

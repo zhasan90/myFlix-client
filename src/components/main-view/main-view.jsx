@@ -6,6 +6,7 @@ import { SignupView } from "../signup-view/signup-view";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom"; 
+import { NavigationBar } from "../navigation-bar/navigation-bar";
 
 
 export const MainView = () => {
@@ -47,6 +48,9 @@ export const MainView = () => {
   return (
     <BrowserRouter>
       <Row className="justify-content-md-center">
+        <NavigationBar>
+          
+        </NavigationBar>
         <Routes>
           <Route
             path="/signup"

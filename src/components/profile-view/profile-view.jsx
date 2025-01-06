@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import { Form } from "react-bootstrap";
-
-
+import { Button, Form } from "react-bootstrap";
 
 export const ProfileView = ({ user, movies, onUpdateProfile, onLogout }) => {
     const [username, setUsername] = useState(user.Username);
@@ -66,7 +64,7 @@ export const ProfileView = ({ user, movies, onUpdateProfile, onLogout }) => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </Form.Label><br />
-                <button type="submit">Update</button>
+                <Button type="submit">Update</Button>
             </Form>
         </div>
     );

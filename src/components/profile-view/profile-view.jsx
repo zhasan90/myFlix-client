@@ -1,12 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 
 
 
-export const ProfileView = ({ user, onUpdateProfile, onLogout }) => {
+export const ProfileView = ({ user, movies, onUpdateProfile, onLogout }) => {
     const [username, setUsername] = useState(user.Username);
     const [email, setEmail] = useState(user.Email);
     const [password, setPassword] = useState("");
+    const [fav, setFav] = useState([]);
+
+    useEffect(() => {
+        const m = movies.filter(x => user.FavoriteMovies.includes(x._id))
+        setFav(m)
+        console.log(m);
+    })
 
     const handleSubmit = (e) => {
         e.preventDefault();

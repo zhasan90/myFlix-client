@@ -13,7 +13,9 @@ export const NavigationBar = ({ }) => {
           <Nav className="me-auto">
             <Link to="/signup">Sign Up</Link>
             <Link to="/login">Login</Link>
+            <Link to="/profile">Profile</Link>
             <Link to="/">Home</Link>
+            <Link className="logout-button" onClick={() => { setUser(null); localStorage.clear() }}>Logout</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

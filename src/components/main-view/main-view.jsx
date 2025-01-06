@@ -3,10 +3,12 @@ import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
+import { ProfileView } from "../profile-view/profile-view";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom"; 
 import { NavigationBar } from "../navigation-bar/navigation-bar";
+
 
 
 export const MainView = () => {
@@ -48,9 +50,7 @@ export const MainView = () => {
   return (
     <BrowserRouter>
       <Row className="justify-content-md-center">
-        <NavigationBar>
-          
-        </NavigationBar>
+        <NavigationBar></NavigationBar>
         <Routes>
           <Route
             path="/signup"
@@ -83,16 +83,56 @@ export const MainView = () => {
             }
           />
           <Route
-            path="/movies/:MovieID"
+            path="/profile"
             element={
               <>
                 {!user ? (
                   <Navigate to="/login" replace />
-                ) : movies.length === 0 ? (
-                  <Col>The list is empty!</Col>
                 ) : (
                   <Col md={8}>
-                    <MovieView movies={movies} />
+                    <ProfileView
+                      user={user}
+                      token={token}
+                      movies={movies}
+                      onUpdateProfile={(updatedUser) => {
+                        const newUser = { ...user, ...updatedUser };
+                        setUser(newUser);
+                        localStorage.setItem("user", JSON.stringify(newUser));
+                      }}
+                      onLogout={() => {
+                        setUser(null);
+                        setToken(null);
+                        localStorage.clear();
+                      }}
+                    />
+                  </Col>
+                )}
+              </>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <>
+                {!user ? (
+                  <Navigate to="/login" replace />
+                ) : (
+                  <Col md={8}>
+                    <ProfileView
+                      user={user}
+                      favoriteMovies={user.FavoriteMovies || []} // Assuming this is part of the user object
+                      movies={movies}
+                      onUpdateProfile={(updatedUser) => {
+                        const newUser = { ...user, ...updatedUser };
+                        setUser(newUser);
+                        localStorage.setItem("user", JSON.stringify(newUser));
+                      }}
+                      onLogout={() => {
+                        setUser(null);
+                        setToken(null);
+                        localStorage.clear();
+                      }}
+                    />
                   </Col>
                 )}
               </>

@@ -50,7 +50,7 @@ export const MainView = () => {
   return (
     <BrowserRouter>
       <Row className="justify-content-md-center">
-        <NavigationBar></NavigationBar>
+        <NavigationBar setUser = {setUser}></NavigationBar>
         <Routes>
           <Route
             path="/signup"

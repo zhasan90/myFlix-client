@@ -11,7 +11,7 @@ export const MovieCard = ({ movie }) => {
   // </div>);
   return (
     <Container>
-      <Card style={{ width: '18rem' }} onClick={() => onMovieClick(movie)}>
+      <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={movie.image} />
         <Card.Body>
           <Card.Title>Title: {movie.title}</Card.Title>
@@ -37,5 +37,5 @@ MovieCard.propTypes = {
     genre: PropTypes.object,
     director: PropTypes.object,
   }).isRequired,
-  // onMovieClick: PropTypes.func.isRequired
+  onMovieClick: PropTypes.func.isRequired
 };

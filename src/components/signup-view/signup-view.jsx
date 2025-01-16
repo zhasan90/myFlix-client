@@ -28,11 +28,7 @@ export const SignupView = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Login response: ", data);
-        if (data.user) {
-          onLoggedIn(data.user);
-        } else {
-          alert("No such user");
-        }
+        if (data) location.href = "/"
       })
       .catch((e) => {
         alert("Something went wrong");

@@ -158,6 +158,24 @@ export const MainView = () => {
               </>
             }
           />
+          <Route
+            path="/movies/:movieID"
+            element={
+              <>
+                {!user ? (
+                  <Navigate to="/login" replace />
+                ) : movies.length === 0 ? (
+                  <Col>The list is empty!</Col>
+                ) : (
+                  <>                
+                      <Col className="mb-4" md={3}>
+                        <MovieView movies={movies} />
+                      </Col>
+                  </>
+                )}
+              </>
+            }
+          />
         </Routes>
         {user && <Link className = "logout-button" onClick={() => { setUser(null); localStorage.clear()}}>Logout</Link>}</Row>
     </BrowserRouter>

@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import "./movie-view.scss"
 
 export const MovieView = ({ movies, onBackClick }) => {
-    const { MovieID } = useParams();
+    const { movieID } = useParams();
 
-    const movie = movies.find(m => m.id === MovieID)
+    const movie = movies.find(m => m.id === movieID)
 
     return (
         <div>
             <div>
-                <img className="w-100" src={movie.image} />
+                <img className="w-100" src={movie.ImagePath} />
             </div>
             <div>
                 <span>Title: </span>

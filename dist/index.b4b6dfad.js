@@ -27482,6 +27482,45 @@ const MainView = ()=>{
                             fileName: "src/components/main-view/main-view.jsx",
                             lineNumber: 141,
                             columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                            path: "/movies/:movieID",
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
+                                    to: "/login",
+                                    replace: true
+                                }, void 0, false, {
+                                    fileName: "src/components/main-view/main-view.jsx",
+                                    lineNumber: 166,
+                                    columnNumber: 19
+                                }, void 0) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                    children: "The list is empty!"
+                                }, void 0, false, {
+                                    fileName: "src/components/main-view/main-view.jsx",
+                                    lineNumber: 168,
+                                    columnNumber: 19
+                                }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                        className: "mb-4",
+                                        md: 3,
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
+                                            movies: movies
+                                        }, void 0, false, {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 172,
+                                            columnNumber: 25
+                                        }, void 0)
+                                    }, void 0, false, {
+                                        fileName: "src/components/main-view/main-view.jsx",
+                                        lineNumber: 171,
+                                        columnNumber: 23
+                                    }, void 0)
+                                }, void 0, false)
+                            }, void 0, false)
+                        }, void 0, false, {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 161,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
@@ -27498,7 +27537,7 @@ const MainView = ()=>{
                     children: "Logout"
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 162,
+                    lineNumber: 180,
                     columnNumber: 18
                 }, undefined)
             ]
@@ -27575,7 +27614,7 @@ var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 var _movieCardScss = require("./movie-card.scss");
-const MovieCard = ({ movie, onMovieClick })=>{
+const MovieCard = ({ movie })=>{
     // return (<div
     //     onClick={() => {
     //         onMovieClick(movie);
@@ -27586,7 +27625,6 @@ const MovieCard = ({ movie, onMovieClick })=>{
             style: {
                 width: '18rem'
             },
-            onClick: ()=>onMovieClick(movie),
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Img, {
                     variant: "top",
@@ -42169,14 +42207,14 @@ var _movieViewScss = require("./movie-view.scss");
 var _s = $RefreshSig$();
 const MovieView = ({ movies, onBackClick })=>{
     _s();
-    const { MovieID } = (0, _reactRouter.useParams)();
-    const movie = movies.find((m)=>m.id === MovieID);
+    const { movieID } = (0, _reactRouter.useParams)();
+    const movie = movies.find((m)=>m.id === movieID);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                     className: "w-100",
-                    src: movie.image
+                    src: movie.ImagePath
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
                     lineNumber: 13,
@@ -42364,7 +42402,7 @@ const MovieView = ({ movies, onBackClick })=>{
         columnNumber: 9
     }, undefined);
 };
-_s(MovieView, "9NuEabzFM24Cni8N79O6IWO1FYU=", false, function() {
+_s(MovieView, "O3vF2RkakSsZj0hXldFkJXZ8hQI=", false, function() {
     return [
         (0, _reactRouter.useParams)
     ];

@@ -10,7 +10,6 @@ export const ProfileView = ({ user, movies, onUpdateProfile, onLogout }) => {
     useEffect(() => {
         const m = movies.filter(x => user.FavoriteMovies.includes(x._id))
         setFav(m)
-        console.log(m);
     })
 
     const handleSubmit = (e) => {

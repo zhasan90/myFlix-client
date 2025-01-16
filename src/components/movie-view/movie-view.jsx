@@ -6,11 +6,12 @@ export const MovieView = ({ movies, onBackClick }) => {
     const { movieID } = useParams();
 
     const movie = movies.find(m => m.id === movieID)
-
+    console.log(movie)
+    console.log(location.href.split("/movies")[0] + "/" + movie.image)
     return (
         <div>
             <div>
-                <img className="w-100" src={movie.ImagePath} />
+                <img className="w-100" src={location.href.split("/movies")[0] + "/" + movie.image} />
             </div>
             <div>
                 <span>Title: </span>

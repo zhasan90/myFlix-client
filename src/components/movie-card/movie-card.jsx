@@ -3,7 +3,7 @@ import { Button, Card, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./movie-card.scss";
 
-export const MovieCard = ({ movie }) => {
+export const MovieCard = ({ movie, onMovieClick }) => {
   // return (<div
   //     onClick={() => {
   //         onMovieClick(movie);
@@ -37,5 +37,5 @@ MovieCard.propTypes = {
     genre: PropTypes.object,
     director: PropTypes.object,
   }).isRequired,
-  // onMovieClick: PropTypes.func.isRequired
+  onMovieClick: PropTypes.func.isRequired
 };

@@ -25,27 +25,6 @@ export const ProfileView = ({ user, movies, onUpdateProfile, onLogout }) => {
 		onUpdateProfile(updatedUser);
 	};
 
-	const addToFavorites = (movieID) => {
-		if (!user.FavoriteMovies.includes(movieID)) {
-			const updatedFavorites = [...user.FavoriteMovies, movieID];
-			onUpdateProfile({
-				...user,
-				FavoriteMovies: updatedFavorites,
-			})
-		}
-	}
-
-	const removeFromFavorites = (movieId) => {
-		const updatedFavorites = user.FavoriteMovies.filter(
-			(id) => id !== movieId
-		);
-		// Update the user profile
-		onUpdateProfile({
-			...user,
-			FavoriteMovies: updatedFavorites,
-		});
-	};
-
 	return (
 		<div className="profile-view">
 			<h2>User Profile</h2>
@@ -55,8 +34,6 @@ export const ProfileView = ({ user, movies, onUpdateProfile, onLogout }) => {
 				<br />
 				<span>Email: </span>
 				<span>{user.Email}</span>
-				<span>Favorite Movies: </span>
-				<span>{user.movies}</span>
 			</div>
 
 			<h3>Update Profile</h3>

@@ -13,8 +13,7 @@ export const MovieView = ({ movies, onBackClick }) => {
 	// ADD MOVIE TO FAVORITE LIST
 	const addToFavoriteList = () => {
 		fetch(
-			`https://movie-api-hlok.onrender.com/users/${
-				JSON.parse(localStorage.getItem('user')).Username
+			`https://movie-api-hlok.onrender.com/users/${JSON.parse(localStorage.getItem('user')).Username
 			}/movies/${movieID}`,
 			{
 				method: 'POST',
@@ -41,8 +40,7 @@ export const MovieView = ({ movies, onBackClick }) => {
 	// REMOVE MOVIE FROM FAVORITE LIST
 	const removeFromFavoriteList = () => {
 		fetch(
-			`https://movie-api-hlok.onrender.com/users/${
-				JSON.parse(localStorage.getItem('user')).Username
+			`https://movie-api-hlok.onrender.com/users/${JSON.parse(localStorage.getItem('user')).Username
 			}/movies/${movieID}`,
 			{
 				method: 'DELETE',
@@ -50,18 +48,11 @@ export const MovieView = ({ movies, onBackClick }) => {
 			}
 		)
 			.then((response) => {
-				if (response.ok) {
-					alert('The movie was removed from you favourite list!');
-					console.log(user.Username);
-					console.log(response);
-					return response.json();
-				} else {
-					console.log('Failed to remove the movie from your favourite list!');
-				}
+				return (response.json());
 			})
 			.then((data) => {
 				localStorage.setItem('user', JSON.stringify(data));
-				location.reload();
+				location.href = "/profile";
 			})
 			.catch((error) => {
 				console.log(error);

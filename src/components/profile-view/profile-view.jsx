@@ -34,8 +34,6 @@ export const ProfileView = ({ user, movies, onUpdateProfile, onLogout }) => {
 				<br />
 				<span>Email: </span>
 				<span>{user.Email}</span>
-				<span>Favorite Movies: </span>
-				<span>{user.Movies}</span>
 			</div>
 
 			<h3>Update Profile</h3>
